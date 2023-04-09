@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="para1">Paragraph 1</p>
+    <p id="para2">Paragraph 2</p>
+    <p id="para3">Paragraph 3</p>
+    <p id="para4">Paragraph 4</p>
+    <script type="text/javascript">
+        const firstPara = document.querySelector("p");
+        const secPara = document.querySelector("#para2");
+        const nodeList = document.querySelectorAll("p");
+        nodeList[3].textContent = "Fourth paragraph"
+        //console.log(nodeList);
+        for (let i = 0; i < nodeList.length; i++) {
+            nodeList[i].setAttribute('class', 'para')
+            nodeList[i].id = "general"
+            console.log(nodeList[i].textContent);
+        }
+        console.log(nodeList)
+        const allParagraphs = document.querySelectorAll("p")
+        allParagraphs.forEach(para => {
+            para.style.fontSize = '24px'
+            para.style.color = '#006A67'
+            para.style.backgroundColor = 'green'
+            para.style.border = 'thick solid white'
+            para.style.fontFamily = 'Consolas'
+        })
+
+        allParagraphs.forEach((para, i) => {
+            if (i % 2 == 0) para.style.color = 'green'
+            else para.style.color = 'red'
+        })
+        for (let i = 0; i < allParagraphs.length; i++) {
+            allParagraphs[i].textContent = `Paragraph number ${i+1}!`
+            allParagraphs[i].setAttribute('id', `${i+1}.Paragraph`)
+            allParagraphs[i].setAttribute('class', 'paragraph')
+        }
+    </script>
+</body>
+
+</html>
